@@ -3,13 +3,35 @@
 import {PureComponent} from 'react'
 
 const weekDaysOptions = [
-    'Mondays', 'Tuesdays', 'Wednesdays',
-    'Thursdays', 'Fridays', 'Saturdays',
-    'Sundays'
-].map((day: string, i: number) => ({
-    label: day,
-    value: String(i + 1)
-}));
+    {
+        label: 'Mondays',
+        value: '1'
+    },
+    {
+        label: 'Tuesdays',
+        value: '2'
+    },
+    {
+        label: 'Wednesdays',
+        value: '3'
+    },
+    {
+        label: 'Thursdays',
+        value: '4'
+    },
+    {
+        label: 'Fridays',
+        value: '5'
+    },
+    {
+        label: 'Saturdays',
+        value: '6'
+    },
+    {
+        label: 'Sundays',
+        value: '0'
+    }
+];
 
 const options = [
     {
@@ -22,7 +44,7 @@ const options = [
     },
     {
         label: 'Saturdays and Sundays',
-        value: '6-7'
+        value: '6,0'
     }
 ].concat(weekDaysOptions);
 
