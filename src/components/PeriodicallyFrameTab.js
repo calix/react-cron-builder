@@ -25,7 +25,7 @@ const minutesOptions = toOptions(range(1, 60)).map((option: Option) => {
     }
 });
 
-const hoursOptions = toOptions(range(0, 24)).map((option: Option) => {
+const hoursOptions = toOptions(range(1, 24)).map((option: Option) => {
     const {label, value} = option;
     return {
         label: `${'0'.concat(label).slice(-2)}:00`,
