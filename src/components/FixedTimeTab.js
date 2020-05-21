@@ -8,7 +8,7 @@ import TimeInput from './components/TimeInput'
 import type {PresetTabProps} from './types/PresetTabProps'
 import DateComponent, {DayOfWeek, DayOfMonth, Month} from './components/DateComponent'
 
-const hoursOptions = toOptions(range(0, 24)).map(addLeadingZeroToOption);
+const hoursOptions = toOptions(range(1, 24)).map(addLeadingZeroToOption);
 const minutesOptions = toOptions(range(0, 60)).map(addLeadingZeroToOption);
 
 export default class FixedTimeTab extends PresetTab {
