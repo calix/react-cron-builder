@@ -116,7 +116,7 @@ export default class PresetTab extends PureComponent {
         return {
             minutes: ensureEveryOn(minutes, minutesMultiple),
             hours: ensureEveryOn(hours, hoursMultiple),
-            ...pick(state, ['dayOfMonth', 'month', 'dayOfWeek'])
+            ...pick(state, ['dayOfWeek', 'dayOfMonth', 'month'])
         }
     }
 }

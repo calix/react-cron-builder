@@ -39,7 +39,7 @@ describe('CronBuilder', () => {
             onChange={onChange}
         />);
         wrapper.find('[data-action]').simulate('click');
-        //expect(onChange).toHaveBeenCalledWith(expression);
+        expect(onChange).toHaveBeenCalledWith(expression);
         expect(wrapper.find('[data-result]')).toHaveLength(1)
     });
 
