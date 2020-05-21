@@ -85,20 +85,20 @@ export const replaceEvery = (value: any) => {
 };
 
 export const parseCronExpression = (expression: string) => {
-    const [minutes, hours, dayOfMonth, month, dayOfWeek] = expression.split(' ');
+    const [minutes, hours, dayOfWeek, dayOfMonth, month] = expression.split(' ');
     const defaultExpression = {
         minutes: EVERY,
         hours: EVERY,
+        dayOfWeek: EVERY,
         dayOfMonth: EVERY,
-        month: EVERY,
-        dayOfWeek: EVERY
+        month: EVERY
     };
     return Object.assign(defaultExpression, {
         minutes: replaceEvery(splitMultiple(minutes)),
         hours: replaceEvery(splitMultiple(hours, HOURS)),
+        dayOfWeek: splitMultiple(dayOfWeek),
         dayOfMonth: splitMultiple(dayOfMonth),
-        month: splitMultiple(month),
-        dayOfWeek: splitMultiple(dayOfWeek)
+        month: splitMultiple(month)
     })
 };
 
