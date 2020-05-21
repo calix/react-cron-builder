@@ -18,7 +18,8 @@ const styleNameFactory = new BEMHelper('cron-builder');
 type Props = {
     cronExpression: string,
     showResult?: boolean,
-    onChange: Function
+    onChange: Function,
+    buttonText: string
 };
 
 type State = {
@@ -42,7 +43,8 @@ export default class CronBuilder extends PureComponent {
     static defaultProps = {
         cronExpression: '* * * * *',
         showResult: true,
-        onChange: noop
+        onChange: noop,
+        buttonText: 'Generate cron expression'
     };
 
     constructor(props: Props, ctx: Object) {
@@ -121,7 +123,7 @@ export default class CronBuilder extends PureComponent {
                         onClick={this.generateExpression}
                         data-action
                     >
-                        Generate cron expression
+                        {this.props.buttonText}
                     </button>
                 </div>
                 <If condition={!!generatedExpression && showResult}>
